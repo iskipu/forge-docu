@@ -1,0 +1,10 @@
+{
+  "extends": "@tsconfig/docusaurus/tsconfig.json",
+  "exclude": ["**/node_modules/*", "blog", "docs", "build", "i18n", "src"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "ES2017",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true
+  }
+}
