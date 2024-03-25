@@ -17,7 +17,9 @@ layout:
 
 If you already have an Electron app and want to try out Electron Forge, you can either use Forge's `import` script or manually configure Forge yourself.
 
-These steps will get you set up with a basic build pipeline that can create [squirrel.windows.md](config/makers/squirrel.windows/) (Windows), [zip.md](config/makers/zip/) (macOS), and [deb.md](config/makers/deb/) (Linux) installers when running `electron-forge make`.
+These steps will get you set up with a basic build pipeline that can create [squirrel.windows.md](config/makers/squirrel.windows.md) (Windows),
+[zip.md](config/makers/zip/) (macOS), and
+[deb.md](config/makers/deb/) (Linux) installers when running `electron-forge make`.
 
 ## Using the import script
 

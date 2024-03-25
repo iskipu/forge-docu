@@ -46,13 +46,16 @@ const sidebars = {
         {
           type: 'category',
           label: 'Makers',
+          link: {
+            type: 'doc',
+            id: 'config/makers/README',
+          },
           items: [
             'config/makers/appx',
             'config/makers/deb',
             'config/makers/dmg',
             'config/makers/flatpak',
             'config/makers/pkg',
-            'config/makers/README',
             'config/makers/rpm',
             'config/makers/snapcraft',
             'config/makers/squirrel.windows',
@@ -63,13 +66,16 @@ const sidebars = {
         {
           type: 'category',
           label: 'Publishers',
+          link: {
+            type: 'doc',
+            id: 'config/publishers/README',
+          },
           items: [
             'config/publishers/bitbucket',
             'config/publishers/electron-release-server',
-            'config/publishers/gcs',
             'config/publishers/github',
+            'config/publishers/gcs',
             'config/publishers/nucleus',
-            'config/publishers/README',
             'config/publishers/s3',
             'config/publishers/snapcraft',
           ],
@@ -102,6 +108,10 @@ const sidebars = {
         {
           type: 'category',
           label: 'Code Signing',
+          link: {
+            type: 'doc',
+            id: 'guides/code-signing/README',
+          },
           items: [
             'guides/code-signing/code-signing-windows',
             'guides/code-signing/code-signing-macos',
@@ -111,6 +121,10 @@ const sidebars = {
         {
           type: 'category',
           label: 'Framework Integration',
+          link: {
+            type: 'doc',
+            id: 'guides/framework-integration/README',
+          },
           items: [
             'guides/framework-integration/parcel',
             'guides/framework-integration/react',
@@ -130,6 +144,10 @@ const sidebars = {
         {
           type: 'category',
           label: 'Extending Electron Forge',
+          link: {
+            type: 'doc',
+            id: 'advanced/extending-electron-forge/README',
+          },
           items: [
             'advanced/extending-electron-forge/writing-plugins',
             'advanced/extending-electron-forge/writing-templates',
