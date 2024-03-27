@@ -18,8 +18,9 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'iskipu', // Usually your GitHub org/user name.
+  projectName: 'forge-docu', // Usually your repo name.
+  trailingSlash: false, // Remove trailing slashes from urls
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
