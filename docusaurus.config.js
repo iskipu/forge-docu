@@ -42,8 +42,7 @@ const config = {
           routeBasePath: '/',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/iskipu/forge-docu/edit/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -64,6 +63,11 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
+          {
+            type: 'docsVersionDropdown',
+            position: 'left',
+            dropdownActiveClassDisabled: true,
+          },
           {
             to: 'https://github.com/electron-userland/electron-forge',
             label: 'GitHub',

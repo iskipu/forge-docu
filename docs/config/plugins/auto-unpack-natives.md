@@ -18,22 +18,20 @@ npm install --save-dev @electron-forge/plugin-auto-unpack-natives
 
 You must add this plugin to your [`plugins`](../configuration.md#plugins) array in your Forge configuration. There are currently no configuration options available for this plugin.
 
-{% hint style="info" %}
-Asar archives are disabled by default with Electron Packager. Make sure you set your `packagerConfig.asar` value accordingly. This option also supports advanced configuration if you pass it an object. See the [API documentation for this option](https://js.electronforge.io/modules/\_electron\_forge\_shared\_types.InternalOptions.html#CreateOptions) for more information.
-{% endhint %}
+:::info
+Asar archives are disabled by default with Electron Packager. Make sure you set your `packagerConfig.asar` value accordingly. This option also supports advanced configuration if you pass it an object. See the [API documentation for this option](https://js.electronforge.io/modules/_electron_forge_shared_types.InternalOptions.html#CreateOptions) for more information.
+:::
 
-{% code title="forge.config.js" %}
-```javascript
+```javascript title="forge.config.js"
 module.exports = {
   packagerConfig: {
-    asar: true // or an object containing your asar options
+    asar: true, // or an object containing your asar options
   },
   plugins: [
     {
-      name: '@electron-forge/plugin-auto-unpack-natives',
-      config: {}
-    }
-  ]
+      name: "@electron-forge/plugin-auto-unpack-natives",
+      config: {},
+    },
+  ],
 };
 ```
-{% endcode %}

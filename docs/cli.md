@@ -8,11 +8,11 @@ description: How to use the command line interface (CLI) commands for Electron F
 
 Forge's CLI is the main way to run Electron Forge commands. It consists of a thin wrapper for its core API. Configuration for these commands is done through your [Forge configuration](config/configuration.md) object.
 
-If you want to use the core API programmatically, see the [#programmatic-usage](cli.md#programmatic-usage "mention") section below.
+If you want to use the core API programmatically, see the [Programmatic usage](cli.md#programmatic-usage) section below.
 
-{% hint style="info" %}
+:::info
 Forge's CLI uses comma-separated value strings to pass multiple arguments into a single flag. Depending on your terminal, these comma-separated values may need to be enclosed in quotation marks.
-{% endhint %}
+:::
 
 ## Installation
 
@@ -24,13 +24,13 @@ npm install --save-dev @electron-forge/cli
 
 ## Bootstrap commands
 
-These commands help you get started with Forge. If you're just getting started with Electron Forge, we recommend you follow the [.](./ "mention") or [import-existing-project.md](import-existing-project.md "mention") guides.
+These commands help you get started with Forge. If you're just getting started with Electron Forge, we recommend you follow the [Getting Started](./) or [Importing an Existing Project](import-existing-project.md) guides.
 
 ### Init
 
-{% hint style="info" %}
+:::info
 We recommend using the `create-electron-app` script (which uses this command) to get started rather than running Init directly.
-{% endhint %}
+:::
 
 This command will initialize a new Forge-powered application in the given directory (defaults to `.`, the current directory).
 
@@ -69,9 +69,9 @@ npx electron-forge import
 
 The Package, Make, and Publish commands are the three main steps of the Electron Forge build pipeline. Each step relies on the output of the previous one, so they are cascading by default (e.g. running `publish` will first run `package` then `make`.
 
-{% hint style="info" %}
-For more conceptual details, see the [build-lifecycle.md](core-concepts/build-lifecycle.md "mention") guide.
-{% endhint %}
+:::info
+For more conceptual details, see the [Build Lifecycle](core-concepts/build-lifecycle.md) guide.
+:::
 
 ### Package
 
@@ -147,11 +147,12 @@ All flags are optional.
 
 #### Usage
 
-<pre class="language-bash"><code class="lang-bash"><strong># By default, the publish command corresponds to a publish npm script:
-</strong>npm run publish -- --from-dry-run
+```bash
+# By default, the publish command corresponds to a publish npm script:
+npm run publish -- --from-dry-run
 # If there is no publish script:
 npx electron-forge publish -- --from-dry-run
-</code></pre>
+```
 
 ## Dev commands
 
@@ -161,7 +162,7 @@ This command will launch your app in dev mode with the `electron` binary in the 
 
 If you type `rs` (and hit enter) in the same terminal where you ran the start command, the running app will be terminated and restarted.
 
-Forge plugins can override this command to run custom development logic. For example, the [webpack.md](config/plugins/webpack.md "mention") runs a webpack-dev-server instance to provide live reloading and HMR.
+Forge plugins can override this command to run custom development logic. For example, the [Webpack Plugin](config/plugins/webpack.md) runs a webpack-dev-server instance to provide live reloading and HMR.
 
 #### Options
 

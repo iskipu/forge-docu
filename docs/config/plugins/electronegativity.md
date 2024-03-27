@@ -20,19 +20,17 @@ Add this plugin to the [`plugins`](../configuration.md#plugins) array in your Fo
 
 ### Example
 
-{% code title="forge.config.js" %}
-```javascript
+```javascript title="forge.config.js"
 module.exports = {
   // ...
   plugins: [
     {
-      name: '@electron-forge/plugin-electronegativity',
+      name: "@electron-forge/plugin-electronegativity",
       config: {
-        isSarif: true
-      }
-    }
-  ]
+        isSarif: true,
+      },
+    },
+  ],
   // ...
 };
 ```
-{% endcode %}

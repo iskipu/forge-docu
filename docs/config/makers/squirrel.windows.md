@@ -18,9 +18,7 @@ You can only build the Squirrel.Windows target on a Windows machine or on a Linu
 
 Add this module to the [makers](./) section of your [Forge configuration](../configuration.md):
 
-{% code title="forge.config.js" %}
-
-```javascript
+```javascript title="forge.config.js"
 module.exports = {
   makers: [
     {
@@ -33,8 +31,6 @@ module.exports = {
   ],
 };
 ```
-
-{% endcode %}
 
 ## Configuration
 
@@ -50,9 +46,7 @@ Squirrel.Windows requires mandatory package metadata to satisfy the [`.nuspec`](
 
 By default, the Squirrel.Windows maker fetches the `author` and `description` fields in the project's package.json file.
 
-{% code title="package.json" %}
-
-```jsonc
+```json title="package.json"
 {
   // ...
   "author": "Alice and Bob",
@@ -61,15 +55,11 @@ By default, the Squirrel.Windows maker fetches the `author` and `description` fi
 }
 ```
 
-{% endcode %}
-
 #### In your Forge config
 
 Alternatively, you can also override these values directly in your Squirrel.Windows maker config.
 
-{% code title="forge.config.js" %}
-
-```javascript
+```javascript title="forge.config.js"
 module.exports = {
   makers: [
     {
@@ -83,11 +73,9 @@ module.exports = {
 };
 ```
 
-{% endcode %}
-
-{% hint style="warning" %}
+:::caution
 Note that the Forge config field is **"authors"** while the package.json field is called **"author".**
-{% endhint %}
+:::
 
 ## Handling startup events
 
@@ -95,13 +83,9 @@ When first running your app, updating it, and uninstalling it, Squirrel.Windows 
 
 The easiest way to handle these arguments and stop your app launching multiple times during these events is to use the [`electron-squirrel-startup`](https://github.com/mongodb-js/electron-squirrel-startup) module as one of the first things your app does.
 
-{% code title="main.js" %}
-
-```javascript
+```javascript title="main.js"
 const { app } = require("electron");
 
 // run this as early in the main process as possible
 if (require("electron-squirrel-startup")) app.quit();
 ```
-
-{% endcode %}

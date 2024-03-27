@@ -1,5 +1,5 @@
 ---
-description: 'Developing with Windows Subsystem for Linux, on Windows'
+description: "Developing with Windows Subsystem for Linux, on Windows"
 ---
 
 # Developing with WSL
@@ -31,7 +31,6 @@ For package/make/publish, you'll still need to specify the platform if you want 
 npm run make -- --platform=win32
 ```
 
-{% hint style="warning" %}
+:::caution
 Some of the dependencies of Electron Forge don't quite work with WSL, as they don't detect that they're running in WSL _\(instead of Linux\)_ and thus tries to run certain tooling provided as Windows executables in... Wine. We are actively working on making the dependent tooling WSL-aware. The workaround is to run package/make/publish outside of WSL.
-{% endhint %}
-
+:::

@@ -23,11 +23,10 @@ images/
 └── icon@3x.png
 ```
 
-{% hint style="info" %}
-The following suffixes for DPI are also supported:
+:::info The following suffixes for DPI are also supported:
 
 @1x, @1.25x, @1.33x, @1.4x, @1.5x, @1.8x, @2x, @2.5x, @3x, @4x, and @5x.
-{% endhint %}
+:::
 
 ### Supported formats
 
@@ -45,9 +44,7 @@ The recommended file formats and icon sizes for each platform are as follows:
 
 Configuring the path to your icon can be done in your Forge configuration.
 
-{% code title="forge.config.js" %}
-
-```javascript
+```javascript title="forge.config.js"
 module.exports = {
   // ...
   packagerConfig: {
@@ -57,11 +54,9 @@ module.exports = {
 };
 ```
 
-{% endcode %}
-
-{% hint style="success" %}
+:::info
 Forge will automatically add the correct extension for each platform, so appending `.ico` or `.icns` to the path is not required.
-{% endhint %}
+:::
 
 After the config has been updated, build your project to generate your executable with the Make command.
 
@@ -69,7 +64,8 @@ After the config has been updated, build your project to generate your executabl
 
 Configuring the path to your icon must be done in both package.json as well as in Electron's main process.
 
-<!-- <pre class="language-javascript" data-title="forge.config.js"><code class="lang-javascript">module.exports = {
+```js title="forge.config.js"
+module.exports = {
   // ...
   makers: \[
     {
@@ -82,18 +78,21 @@ Configuring the path to your icon must be done in both package.json as well as i
     }
   ]
   // ...
-<strong>}
-</strong></code></pre> -->
+// highlight-next-line
+}
+```
 
 The icon must be additionally loaded when instantiating your [BrowserWindow](https://www.electronjs.org/docs/latest/api/browser-window#new-browserwindowoptions).
 
-<!-- <pre class="language-javascript" data-title="main.js (Main Process)"><code class="lang-javascript">const { BrowserWindow } = require('electron')
+```js title="main.js (Main Process)"
+const { BrowserWindow } = require("electron");
 
 const win = new BrowserWindow({
   // ...
-<strong>  icon: '/path/to/icon.png'
-</strong>})
-</code></pre> -->
+  // highlight-next-line
+  icon: "/path/to/icon.png",
+});
+```
 
 Once the path to the icon has been configured, build your project to generate your executable with either `npm run make`.
 
@@ -103,8 +102,7 @@ Installers usually have icons! Don't forget to configure those in the Maker-spec
 
 Here is an example of how that can be done:
 
-```javascript
-// forge.config.js
+```javascript title="forge.config.js"
 module.exports = {
   // ...
   makers: [
@@ -154,6 +152,6 @@ Operating systems have an icon cache. Resetting the cache is recommended if the 
 
 Windows caches all application icons in a hidden Icon Cache Database. If your Electron app's icon is not showing up, you may need to rebuild this cache. To invalidate the cache, use the system `ie4uinit.exe` utility:
 
-```sh
+```bash
 ie4uinit.exe -show
 ```

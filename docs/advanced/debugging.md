@@ -2,14 +2,14 @@
 
 In Electron apps, the main and renderer processes have different debugging mechanisms:
 
-* Renderer processes can be debugged using Chromium DevTools.
-* The main process can be debugged via the `--inspect` and `--inspect-brk` command line flags.
+- Renderer processes can be debugged using Chromium DevTools.
+- The main process can be debugged via the `--inspect` and `--inspect-brk` command line flags.
 
 This guide goes over Forge-specific ways of debugging the main process through the command line or with a code editor.
 
-{% hint style="info" %}
+:::info
 Each section in this guide assumes your `package.json` has a `"start": "electron-forge start"` script.
-{% endhint %}
+:::
 
 For more general information on debugging Electron apps, see the [main Electron docs on Application Debugging](https://www.electronjs.org/docs/latest/tutorial/application-debugging#renderer-process).
 
@@ -23,16 +23,15 @@ npm run start -- --inspect-electron
 
 Once your app is active, open [`chrome://inspect`](chrome://inspect) in any Chromium-based browser to attach a debugger to the main process of your app.
 
-{% hint style="info" %}
+:::info
 To add a breakpoint at the first line of execution when debugging, you can use Forge's `--inspect-brk-electron` flag instead.
-{% endhint %}
+:::
 
 ## Debugging with VS Code
 
 To debug the main process through VS Code, add the following [Node.js launch configuration](https://code.visualstudio.com/docs/nodejs/nodejs-debugging):
 
-{% code title=".vscode/launch.json" %}
-```json5
+```json title=".vscode/launch.json"
 {
   "configurations": [
     {
@@ -44,17 +43,13 @@ To debug the main process through VS Code, add the following [Node.js launch con
         "runtimeExecutable": "${workspaceFolder}/node_modules/@electron-forge/cli/script/vscode.cmd"
       },
       // runtimeArgs will be passed directly to your Electron application
-      "runtimeArgs": [
-        "foo",
-        "bar"
-      ],
+      "runtimeArgs": ["foo", "bar"],
       "cwd": "${workspaceFolder}",
       "console": "integratedTerminal"
     }
   ]
 }
 ```
-{% endcode %}
 
 Once this configuration is added, launch the app via VS Code's Run and Debug view to start debugging.
 

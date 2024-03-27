@@ -2,15 +2,16 @@
 description: How to create an Electron app with Vue and Electron Forge
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Vue 3
 
 Vue 3 can be added to Electron Forge's Vite template with a few setup steps.
 
-{% hint style="info" %}
-
+:::info
 The following guide has been tested with Vue 3 and Vite 4.
-
-{% endhint %}
+:::
 
 ## Setting up the app
 
@@ -33,8 +34,8 @@ npm install --save-dev @vitejs/plugin-vue
 
 You should now be able to start using Vue components in your Electron app. The following is a very minimal example of how to start to add Vue 3 code:
 
-{% tabs %}
-{% tab title="src/index.html" %}
+<Tabs>
+  <TabItem value="index.html" label="src/index.html">
 
 Replace the contents of `src/index.html` with a `<div>` element with the `#app` id attribute.
 
@@ -52,51 +53,48 @@ Replace the contents of `src/index.html` with a `<div>` element with the `#app` 
 </html>
 ```
 
-{% endtab %}
-
-{% tab title="src/App.vue" %}
+  </TabItem>
+  <TabItem value="App.vue" label="src/App.vue">
 
 Add the contents from the template back to `src/App.vue`.
 
-```vue
+```jsx
 <template>
   <h1>💖 Hello World!</h1>
   <p>Welcome to your Electron application.</p>
 </template>
 
 <script setup>
-console.log('👋 This message is being logged by "App.vue", included via Vite');
+  console.log('👋 This message is being logged by "App.vue", included via Vite');
 </script>
 ```
 
-{% endtab %}
-
-{% tab title="src/renderer.js" %}
+  </TabItem>
+  <TabItem value="renderer.js" label="src/renderer.js">
 
 Mount `App.vue` into the DOM with Vue's `createApp` API.
 
-```javascript
-import { createApp } from 'vue';
-import App from './App.vue';
+```js
+import { createApp } from "vue";
+import App from "./App.vue";
 
-createApp(App).mount('#app');
+createApp(App).mount("#app");
 ```
 
-{% endtab %}
-
-{% tab title="vite.renderer.config.mjs" %}
+  </TabItem>
+  <TabItem value="vite.renderer.config.mjs" label="vite.renderer.config.mjs">
 
 Configure the Vue plugin for Vite.js.
 
-```javascript
-import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
+```js
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
 
 // https://vitejs.dev/config
 export default defineConfig({
-  plugins: [vue()]
+  plugins: [vue()],
 });
 ```
 
-{% endtab %}
-{% endtabs %}
+  </TabItem>
+</Tabs>
